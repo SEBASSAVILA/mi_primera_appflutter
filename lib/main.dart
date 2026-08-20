@@ -9,14 +9,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return MaterialApp(
-  title: 'Mi Perfil',
-  debugShowCheckedModeBanner: false,   // borramos el banner de debug
-  theme: ThemeData(
-    primarySwatch: Colors.deepPurple,
-  ),
-  home: const PerfilScreen(),
-);
+    return MaterialApp(
+      title: 'Mi Perfil',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
+      home: const PerfilScreen(),
+    );
   }
 }
 
@@ -58,10 +58,14 @@ class _PerfilScreenState extends State<PerfilScreen> {
               'SEBASTIAN AVILA',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
-            const Text(
-              'Estudiante de Carrera de Ingeniería en Sistemas Inteligentes',
-              style: TextStyle(fontSize: 16, color: Colors.grey),
+            const SizedBox(height: 8),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Text(
+                'Estudiante de Carrera de Ingeniería en Sistemas Inteligentes',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+              ),
             ),
             const SizedBox(height: 20),
             Card(
@@ -86,7 +90,16 @@ class _PerfilScreenState extends State<PerfilScreen> {
                       children: const [
                         Icon(Icons.email, color: Colors.deepPurple),
                         SizedBox(width: 8),
-                        Text('correo@ejemplo.com'),
+                        Text('s.avila@ecotec.edu.ec'),
+                      ],
+                    ),
+                    const SizedBox(height: 8),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.favorite, color: Colors.deepPurple),
+                        SizedBox(width: 8),
+                        Text('Hobbie: (Musico, Baterista,Compositor)'),
                       ],
                     ),
                   ],
