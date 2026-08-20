@@ -18,3 +18,4 @@ samples, guidance on mobile development, and a full API reference.
 
 Inicializacion de intalacion de FLUTTER 
 ![alt text](<Screenshot 2026-08-17 210340.png>)
+![alt text](<Screenshot 2026-08-17 213541.png>)
