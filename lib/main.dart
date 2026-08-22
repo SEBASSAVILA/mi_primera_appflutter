@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
+
+// Paleta de colores personalizada
+const Color colorTerracota = Color(0xFFC1603C);
+const Color colorTerracotaOscuro = Color(0xFF8C4530);
+const Color colorBeige = Color(0xFFF5EBE0);
+const Color colorCrema = Color(0xFFFFF8F0);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,10 +19,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Mi Perfil',
       debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-          textTheme: GoogleFonts.poppinsTextTheme(),
-        ),
+      theme: ThemeData(
+        primaryColor: colorTerracota,
+        scaffoldBackgroundColor: colorBeige,
+        textTheme: GoogleFonts.poppinsTextTheme(),
+      ),
       home: const PerfilScreen(),
     );
   }
@@ -43,97 +49,127 @@ class _PerfilScreenState extends State<PerfilScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mi Perfil Personal'),
-        backgroundColor: Colors.deepPurple,
+        title: Text(
+          'Mi Perfil Personal',
+          style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+        ),
+        backgroundColor: colorTerracota,
+        foregroundColor: Colors.white,
+        elevation: 0,
       ),
-      backgroundColor: Colors.deepPurple[50],
+      backgroundColor: colorBeige,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const CircleAvatar(
-              radius: 60,
-              backgroundColor: Colors.deepPurple,
-              child: Icon(Icons.person, size: 70, color: Colors.white),
-            ),
-            const SizedBox(height: 16),
-            const Text(
-              'SEBASTIAN AVILA',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Text(
-                'Estudiante de Carrera de Ingeniería en Sistemas Inteligentes',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(height: 20),
+              CircleAvatar(
+                radius: 60,
+                backgroundColor: colorTerracota,
+                backgroundImage: const AssetImage('assets/images/perfil.png'),
               ),
-            ),
-            const SizedBox(height: 20),
-            Card(
-              margin: const EdgeInsets.symmetric(horizontal: 24),
-              color: Colors.white,
-              elevation: 4,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.location_on, color: Colors.deepPurple),
-                        SizedBox(width: 8),
-                        Text('Quito, Ecuador'),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.email, color: Colors.deepPurple),
-                        SizedBox(width: 8),
-                        Text('s.avila@ecotec.edu.ec'),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.favorite, color: Colors.deepPurple),
-                        SizedBox(width: 8),
-                        Text('Hobbie: (Musico, Baterista,Compositor)'),
-                      ],
-                    ),
-                  ],
+              const SizedBox(height: 16),
+              Text(
+                'SEBASTIAN AVILA',
+                style: GoogleFonts.poppins(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: colorTerracotaOscuro,
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            if (mostrarInfo)
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 24),
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.deepPurple[100],
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: const Text(
-                  'Me apasiona la programación y el desarrollo de aplicaciones móviles.',
+              const SizedBox(height: 8),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Text(
+                  'Estudiante de Carrera de Ingeniería en Sistemas Inteligentes',
                   textAlign: TextAlign.center,
+                  style: GoogleFonts.poppins(fontSize: 15, color: Colors.brown[400]),
                 ),
               ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _toggleInfo,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepPurple,
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              const SizedBox(height: 20),
+              Card(
+                margin: const EdgeInsets.symmetric(horizontal: 24),
+                color: colorCrema,
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.location_on, color: colorTerracota),
+                          const SizedBox(width: 8),
+                          Text('Quito, Ecuador', style: GoogleFonts.poppins()),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.email, color: colorTerracota),
+                          const SizedBox(width: 8),
+                          Text('s.avila@ecotec.edu.ec', style: GoogleFonts.poppins()),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.favorite, color: colorTerracota),
+                          const SizedBox(width: 8),
+                          Flexible(
+                            child: Text(
+                              'Hobbie: Músico, Baterista, Compositor',
+                              style: GoogleFonts.poppins(),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
-              child: Text(mostrarInfo ? 'Ocultar información' : 'Ver más sobre mí'),
-            ),
-          ],
+              const SizedBox(height: 20),
+              if (mostrarInfo)
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 24),
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                    color: colorTerracota.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: colorTerracota.withValues(alpha: 0.4)),
+                  ),
+                  child: Text(
+                    'Me apasiona la programación y el desarrollo de aplicaciones móviles.',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(color: colorTerracotaOscuro),
+                  ),
+                ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _toggleInfo,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: colorTerracota,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                child: Text(
+                  mostrarInfo ? 'Ocultar información' : 'Ver más sobre mí',
+                  style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
+                ),
+              ),
+              const SizedBox(height: 30),
+            ],
+          ),
         ),
       ),
     );
