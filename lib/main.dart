@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Mi Perfil',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-      ),
+          theme: ThemeData(
+          primarySwatch: Colors.deepPurple,
+          textTheme: GoogleFonts.poppinsTextTheme(),
+        ),
       home: const PerfilScreen(),
     );
   }
