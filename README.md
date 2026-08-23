@@ -16,6 +16,11 @@ Sebastian Avila
 - Visual Studio Code
 - Google Fonts (paquete externo)
 
+## Paquete externo utilizado
+**google_fonts**: se utilizó para aplicar tipografías personalizadas 
+(Poppins) en toda la aplicación, mejorando la presentación visual.
+
+
 ## Instalacion de Fkutter 
 
 ![alt text](<Screenshot 2026-08-17 210340.png>)
