@@ -8,7 +8,7 @@ Aplicación desarrollada en Flutter que muestra un perfil personal,
 demostrando el uso de widgets básicos, un paquete externo (google_fonts) 
 y su ejecución en un emulador Android.
 
-## Aautor 
+## Autor 
 Sebastian Avila
 ## Tecnologías utilizadas
 - Flutter
