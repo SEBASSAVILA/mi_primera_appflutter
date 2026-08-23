@@ -2,11 +2,19 @@
 
 A new Flutter project.
 
-## Getting Started
+## Descripcion
 
-This project is a starting point for a Flutter application.
+Aplicación desarrollada en Flutter que muestra un perfil personal, 
+demostrando el uso de widgets básicos, un paquete externo (google_fonts) 
+y su ejecución en un emulador Android.
 
-A few resources to get you started if this is your first Flutter project:
+## Aautor 
+Sebastian Avila
+## Tecnologías utilizadas
+- Flutter
+- Dart
+- Visual Studio Code
+- Google Fonts (paquete externo)
 
 - [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
 - [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
