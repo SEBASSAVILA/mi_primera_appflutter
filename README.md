@@ -27,4 +27,4 @@ agregamos el google fonts anuestro pubspec.yaml
 agregamos el google fonts anuestro pubspec.yaml
 
 Resultado 
-![alt text](<Screenshot 2026-08-22 210134.png>)
+![alt text](<Screenshot 2026-08-22 210134-1.png>)
