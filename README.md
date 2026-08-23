@@ -20,6 +20,7 @@ Inicializacion de intalacion de FLUTTER
 ![alt text](<Screenshot 2026-08-17 210340.png>)
 ![alt text](<Screenshot 2026-08-17 213541.png>)
 Instalamos el paquete flutter pub add google.fonts 
+![alt text](<Screenshot 2026-08-22 203809.png>)
 ![alt text](image.png)![alt text](image-1.png)
 agregamos el google fonts anuestro pubspec.yaml
 
