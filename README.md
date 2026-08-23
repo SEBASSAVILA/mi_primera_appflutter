@@ -21,7 +21,7 @@ Sebastian Avila
 (Poppins) en toda la aplicación, mejorando la presentación visual.
 
 
-## Instalacion de Fkutter 
+## Instalacion de Flutter 
 
 ![alt text](<Screenshot 2026-08-17 210340.png>)
 ![alt text](<Screenshot 2026-08-17 213541.png>)
