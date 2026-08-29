@@ -6,7 +6,7 @@
 
 ## Actividad Integradora 2
 ### Descripción
-Continuación de la Actividad 1, se agregaron 4 pantallas...
+Continuación de la Actividad 1
 
 ### Nuevas funcionalidades
 ...
