@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
 
-// Paleta de colores personalizada de la app
+// Paleta de colores personalizada de la app - tema morado/cian (música/neon)
 class AppColors {
-  // Colores de la Actividad 1 (perfil)
-  static const Color terracota = Color(0xFFC1603C);
-  static const Color terracotaOscuro = Color(0xFF8C4530);
-  static const Color beige = Color(0xFFF5EBE0);
-  static const Color crema = Color(0xFFFFF8F0);
+  // Color principal (antes terracota) -> ahora violeta vibrante
+  static const Color terracota = Color(0xFF7C3AED);
+  // Color oscuro de acento (antes terracotaOscuro) -> índigo profundo
+  static const Color terracotaOscuro = Color(0xFF4C1D95);
+  // Fondo de pantallas (antes beige) -> lavanda muy claro
+  static const Color beige = Color(0xFFF3F0FF);
+  // Fondo de tarjetas (antes crema) -> blanco lavanda
+  static const Color crema = Color(0xFFFAF8FF);
 
-  // Colores del gradiente (Actividad 1)
-  static const Color gradienteRosa = Color(0xFFF7599E);
-  static const Color gradienteMorado = Color(0xFF444FC7);
-  static const Color gradienteCeleste = Color(0xFF94BBE9);
+  // Color de acento extra: cian, para detalles tipo neón
+  static const Color cian = Color(0xFF06B6D4);
 
-  // Gradiente reutilizable
+  // Gradiente para el fondo del Home (violeta -> índigo -> cian)
   static const RadialGradient fondoGradiente = RadialGradient(
     center: Alignment.center,
-    radius: 1.0,
-    colors: [gradienteRosa, gradienteMorado, gradienteCeleste],
-    stops: [0.0, 0.83, 1.0],
+    radius: 1.1,
+    colors: [
+      Color(0xFF7C3AED), // violeta
+      Color(0xFF4C1D95), // índigo profundo
+      Color(0xFF06B6D4), // cian
+    ],
+    stops: [0.0, 0.6, 1.0],
   );
 }
