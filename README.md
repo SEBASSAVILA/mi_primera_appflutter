@@ -13,5 +13,4 @@ Continuación de la Actividad 1
 
 ### Pantallas desarrolladas
 ...
-
-[...capturas nuevas de esta actividad...]
+Instalacion de  paquete url laucher

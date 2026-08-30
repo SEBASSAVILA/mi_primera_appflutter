@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
           'Mi Perfil Personal',
           style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
         ),
-        backgroundColor: AppColors.terracota,
+        backgroundColor: const Color.fromARGB(255, 193, 60, 60),
         foregroundColor: Colors.white,
         elevation: 0,
       ),
@@ -34,7 +34,16 @@ class _HomeScreenState extends State<HomeScreen> {
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
-          gradient: AppColors.fondoGradiente,
+          gradient: RadialGradient(
+            center: Alignment.center,
+            radius: 1.0,
+            colors: [
+              Color.fromARGB(255, 150, 99, 121),
+              Color(0xFF444FC7),
+              Color(0xFF94BBE9),
+            ],
+            stops: [0.0, 0.83, 1.0],
+          ),
         ),
         child: Center(
           child: SingleChildScrollView(
@@ -44,13 +53,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: 20),
                 const CircleAvatar(
                   radius: 60,
-                  backgroundColor: AppColors.terracota,
+                  backgroundColor: Color.fromARGB(235, 212, 74, 64),
                   backgroundImage: AssetImage('assets/images/perfil.png'),
                 ),
                 const SizedBox(height: 16),
                 Text(
                   'SEBASTIAN AVILA',
-                  style: GoogleFonts.poppins(
+                  style: GoogleFonts.montserratAlternates(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -127,7 +136,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       border: Border.all(color: Colors.white.withValues(alpha: 0.5)),
                     ),
                     child: Text(
-                      'Me apasiona la programación y el desarrollo de aplicaciones móviles.',
+                      'Me apasiona la programación. '
+                      'En mis tiempos libres disfruto de tocar la batería y componer música. '
+                      'También me gusta aprender sobre nuevas tecnologías y cómo aplicarlas '
+                      'en proyectos innovadores.',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(color: Colors.white),
                     ),
@@ -149,10 +161,38 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const SizedBox(height: 30),
+                // Botón para navegar a las nuevas secciones (Actividad 2)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: Wrap(
+                    spacing: 10,
+                    runSpacing: 10,
+                    alignment: WrapAlignment.center,
+                    children: [
+                      _botonNav(context, 'Proyectos', Icons.work, '/proyectos'),
+                      _botonNav(context, 'Hobbies', Icons.favorite, '/hobbies'),
+                      _botonNav(context, 'Contacto', Icons.contact_mail, '/contacto'),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 30),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _botonNav(BuildContext context, String texto, IconData icono, String ruta) {
+    return ElevatedButton.icon(
+      onPressed: () => Navigator.pushNamed(context, ruta),
+      icon: Icon(icono, size: 18),
+      label: Text(texto, style: GoogleFonts.poppins(fontSize: 13)),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.white.withValues(alpha: 0.9),
+        foregroundColor: AppColors.terracotaOscuro,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       ),
     );
   }
