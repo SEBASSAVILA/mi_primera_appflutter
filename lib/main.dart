@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'providers/favoritos_provider.dart';
 import 'screens/home_screen.dart';
 import 'screens/proyectos_screen.dart';
 import 'screens/hobbies_screen.dart';
@@ -13,16 +15,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Mi Perfil',
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const HomeScreen(),
-        '/proyectos': (context) => const ProyectosScreen(),
-        '/hobbies': (context) => const HobbiesScreen(),
-        '/contacto': (context) => const ContactoScreen(),
-      },
+    // ChangeNotifierProvider envuelve toda la app,
+    // así FavoritosProvider está disponible en cualquier pantalla.
+    return ChangeNotifierProvider(
+      create: (context) => FavoritosProvider(),
+      child: MaterialApp(
+        title: 'Mi Perfil',
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const HomeScreen(),
+          '/proyectos': (context) => const ProyectosScreen(),
+          '/hobbies': (context) => const HobbiesScreen(),
+          '/contacto': (context) => const ContactoScreen(),
+        },
+      ),
     );
   }
 }
