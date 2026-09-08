@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../theme/app_colors.dart';
-//Imporptamos el provider para poder escuchar los cambios en FavoritosProvider
 import 'package:provider/provider.dart';
 import '../providers/favoritos_provider.dart';
+import '../widgets/info_row.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -92,37 +92,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(Icons.location_on, color: AppColors.terracota),
-                            const SizedBox(width: 8),
-                            Text('Quito, Ecuador', style: GoogleFonts.poppins()),
-                          ],
-                        ),
+                        const InfoRow(icono: Icons.location_on, texto: 'Quito, Ecuador'),
                         const SizedBox(height: 8),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(Icons.email, color: AppColors.terracota),
-                            const SizedBox(width: 8),
-                            Text('s.avila@ecotec.edu.ec', style: GoogleFonts.poppins()),
-                          ],
-                        ),
+                        const InfoRow(icono: Icons.email, texto: 's.avila@ecotec.edu.ec'),
                         const SizedBox(height: 8),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(Icons.favorite, color: AppColors.terracota),
-                            const SizedBox(width: 8),
-                            Flexible(
-                              child: Text(
-                                'Hobbie: Músico, Baterista, Compositor',
-                                style: GoogleFonts.poppins(),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
+                        const InfoRow(
+                          icono: Icons.favorite,
+                          texto: 'Hobbie: Músico, Baterista, Compositor',
                         ),
                       ],
                     ),
@@ -163,8 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
                   ),
                 ),
-                 const SizedBox(height: 30),
-                // Contador de favoritos usando Provider (Actividad 3)
+                const SizedBox(height: 30),
                 Consumer<FavoritosProvider>(
                   builder: (context, favoritosProvider, child) {
                     return Container(
@@ -192,7 +167,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
                 const SizedBox(height: 16),
-                // Botón para navegar a las nuevas secciones (Actividad 2)
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Wrap(
