@@ -50,7 +50,8 @@ Ejecutar la aplicación:
    flutter run
 
 Instalacion de PROVIDER
-![alt text](image-6.png) ![alt text](image-7.png)
+![alt text](image-6.png) 
+![alt text](image-7.png)
 •	ChangeNotifier: la clase base que hace que este objeto pueda "avisar" cuando algo cambia
 •	notifyListeners(): el método que dispara el aviso — se llama cada vez que cambias un dato importante
 •	Los getters (favoritos, cantidadFavoritos) permiten que cualquier pantalla consulte datos calculados sin duplicar lógica
@@ -58,15 +59,30 @@ Instalacion de PROVIDER
 •	Se agregó el import del FavoritosProvider
 •	El MaterialApp ahora está envuelto por ChangeNotifierProvider, con create: (context) => FavoritosProvider() — esto "crea" el provider una sola vez y lo comparte con toda la app
 ![alt text](image-8.png)
-
+Widget
+•  Ya no es StatefulWidget — ahora es StatelessWidget, porque el estado ya no vive aquí, vive en el Provider 
+•  Consumer<FavoritosProvider> envuelve el GridView — se reconstruye solo cuando hay cambios 
+•  favoritosProvider.toggleFavorito(index) reemplaza el setState() de antes 
+El SnackBar se muestra después de llamar a toggleFavorito, así que el texto ya refleja el nuevo estado
+![alt text](image-9.png)
    Pantalla principal
 ![alt text](<Screenshot 2026-08-30 150620.png>)
 Pantalla  Proyectos
 ![alt text](<Screenshot 2026-09-08 173516.png>)
 Pantaslla de hobbies
 ![alt text](<Screenshot 2026-09-08 151456.png>)
+Ve a la pantalla Hobbies y seleciona los HOBBIES (ícono, nombre, corazón)
+Toca el corazón de 1 o 2 hobbies → confirma que:
+El ícono cambia entre corazón lleno/vacío
+Aparece el SnackBar con el mensaje correcto ("agregado a favoritos" / "quitado de favoritos")
+Regresa al Home → confirma que el contador ("X hobbies favoritos") muestra el NUMERO actualizado
+Vuelve a entrar a Hobbies → confirma que los favoritos que marcaste siguen marcados (esto prueba que el estado vive en el Provider, no se pierde al navegar)
+![alt text](image-10.png)
+![alt text](image-11.png)
 Pantalla de contacto
 ![alt text](image-5.png)
-   Autor
+   
+   
+Autor
 
 Sebastian Avila
