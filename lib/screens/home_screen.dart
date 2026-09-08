@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../theme/app_colors.dart';
+//Imporptamos el provider para poder escuchar los cambios en FavoritosProvider
+import 'package:provider/provider.dart';
+import '../providers/favoritos_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -160,7 +163,35 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
                   ),
                 ),
-                const SizedBox(height: 30),
+                 const SizedBox(height: 30),
+                // Contador de favoritos usando Provider (Actividad 3)
+                Consumer<FavoritosProvider>(
+                  builder: (context, favoritosProvider, child) {
+                    return Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 24),
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.9),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(Icons.favorite, color: AppColors.terracotaOscuro, size: 18),
+                          const SizedBox(width: 8),
+                          Text(
+                            '${favoritosProvider.cantidadFavoritos} hobbies favoritos',
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.terracotaOscuro,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(height: 16),
                 // Botón para navegar a las nuevas secciones (Actividad 2)
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
